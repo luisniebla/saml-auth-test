@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useState } from 'react';
 
-function App() {
+function App({loginMetadata}) {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const getQueryParams = (param) => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,14 +18,14 @@ function App() {
       }
     })
     } else {
-    loginWithRedirect({
-    });
-  }
+      loginWithRedirect({authorizationParams: {
+      }});
+    }
   };
 
     const connectionValues = [
-    '24bd1970-a677-4ca7-a4d2-e328ddd4691b-repay-samlp-0',
-    '002152af-9b53-4eeb-bd46-edbd2e2d698e-merchant-db',
+    '7ab7ff98-cd96-11ed-afa1-0242ac120002-merchant-db',
+    '7ab7ff98-cd96-11ed-afa1-0242ac120002-merchant-samlp-5',
     null,
   ];
 
