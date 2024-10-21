@@ -14,12 +14,12 @@ function App({loginMetadata}) {
     if (connection) {
       loginWithRedirect({
       authorizationParams: {
+        organization: loginMetadata.auth0.auth0_org_id,
         connection: connection // Replace with your SAML connection name
       }
     })
     } else {
-      loginWithRedirect({authorizationParams: {
-      }});
+      loginWithRedirect();
     }
   };
 
